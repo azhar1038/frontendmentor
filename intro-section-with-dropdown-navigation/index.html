@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="primary-header | flex" data-open="false">
+      <div class="header-logo">
+        <img src="./images/logo.svg" alt="snap logo">
+      </div>
+      <nav class="primary-nav-wrapper | flex">
+        <ul id="primary-nav" class="primary-nav | flex" >
+          <li class="nav-item" data-type="dropdown" data-align="right" aria-expanded="false">
+            <button class="nav-text">Features</button>
+            <ul>
+              <li class="icon-text">
+                <img src="./images/icon-todo.svg" alt="" aria-hidden="true">
+                <a class="nav-text" href="">Todo List</a>
+              </li>
+              <li class="icon-text">
+                <img src="./images/icon-calendar.svg" alt="" aria-hidden="true">
+                <a class="nav-text" href="">Calendar</a>
+              </li>
+              <li class="icon-text">
+                <img src="./images/icon-reminders.svg" alt="" aria-hidden="true">
+                <a class="nav-text" href="">Reminders</a>
+              </li>
+              <li class="icon-text">
+                <img src="./images/icon-planning.svg" alt="" aria-hidden="true">
+                <a class="nav-text" href="">Planning</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item" data-type="dropdown" aria-expanded="false">
+            <button class="nav-text">Company</button>
+            <ul>
+              <li><a class="nav-text" href="">History</a></li>
+              <li><a class="nav-text" href="">Our Team</a></li>
+              <li><a class="nav-text" href="">Blog</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-text" href="">Careers</a></li>
+          <li><a class="nav-text" href="">About</a></li>
+        </ul>
+        <ul class="primary-nav-actions | flex">
+          <li><a class="nav-text" href="">Login</a></li>
+          <li><a class="btn" data-type="small" href="">Register</a></li>
+        </ul>
+      </nav>
+      <!-- Dark mode switch to be placed here -->
+      <button class="menu-button" id="primary-nav-button"><span class="sr-only">Menu</span></button>
+    </header>
+    <main class="content-wrapper">
+      <picture class="content-image">
+        <source media="(min-width: 50em)" srcset="./images/image-hero-desktop.png">
+        <img src="./images/image-hero-mobile.png" alt="" aria-hidden="true">
+      </picture>
+      <section class="content-body">
+        <h1>Make remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.
+        </p>
+        <a class="btn" data-type="solid" href="">Learn more</a>
+        <ul class="content-clients">
+          <li><img src="./images/client-databiz.svg" alt="Databiz"></li>
+          <li><img src="./images/client-audiophile.svg" alt="Audiophile"></li>
+          <li><img src="./images/client-meet.svg" alt="Meet"></li>
+          <li><img src="./images/client-maker.svg" alt="Maker"></li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/azhar1038">Azhar</a>.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
