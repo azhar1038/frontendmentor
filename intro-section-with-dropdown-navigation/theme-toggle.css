@@ -1,0 +1,118 @@
+.theme-toggle {
+  --size: 2rem;
+  --transition: linear;
+  --time: 0ms;
+
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+
+  inline-size: var(--size);
+  block-size: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-toggle:not(:active):focus-visible {
+  outline-offset: 5px;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid inherit;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-toggle {
+    --transition: cubic-bezier(.43,1.56,.73,.97);
+    --time: 400ms;
+  }
+}
+
+.theme-toggle > svg {
+  height: 100%;
+  width: 100%;
+}
+
+.sun-and-moon > :is(.sun, .sun-beams, .moon) {
+  transform-origin: center;
+}
+
+.sun {
+  transition: transform var(--time) var(--transition);
+}
+
+.moon > circle {
+  transform-origin: center;
+  transform: translateX(0);
+  transition: transform var(--time) var(--transition);
+}
+
+.sun-beams {
+  opacity: 1;
+  transition: opacity calc(var(--time) / 2) ease-in-out;
+}
+
+.sun-beams > circle {
+  transform: scale(0.95);
+  transform-origin: center;
+  transition: transform var(--time) var(--transition);
+}
+
+[data-theme='dark'] .sun {
+  transform: scale(1.75);
+}
+
+[data-theme='dark'] .sun-beams {
+  opacity: 0;
+}
+
+[data-theme='dark'] .sun-beams > circle {
+  transform: scale(0);
+}
+
+[data-theme='dark'] .moon > circle {
+  transform: translateX(-7px);
+  transition-delay: calc(var(--time) / 2);
+}
+
+@supports (cx: 1) {
+  .moon > circle {
+    transition: cx var(--time) var(--transition);
+  }
+
+  [data-theme='dark'] .moon > circle {
+    transform: translateX(0);
+    cx: 17;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sun-beams > circle:first-child {
+    transition-delay: 100ms;
+  }
+  
+  .sun-beams > circle:nth-child(2) {
+    transition-delay: 150ms;
+  }
+   
+  .sun-beams > circle:nth-child(3) {
+    transition-delay: 200ms;
+  }
+   
+  .sun-beams > circle:nth-child(4) {
+    transition-delay: 250ms;
+  }
+   
+  .sun-beams > circle:nth-child(5) {
+    transition-delay: 300ms;
+  }
+   
+  .sun-beams > circle:nth-child(6) {
+    transition-delay: 350ms;
+  }
+}

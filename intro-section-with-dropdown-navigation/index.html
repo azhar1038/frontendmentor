@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme-toggle.css">
   <script src="main.js" defer></script>
+  <script src="theme-toggle.js"></script>
 </head>
 <body>
   <div class="container">
@@ -23,19 +25,19 @@
           <li class="nav-item" data-type="dropdown" data-align="right" aria-expanded="false">
             <button class="nav-text">Features</button>
             <ul>
-              <li class="icon-text">
+              <li class="nav-item icon-text">
                 <img src="./images/icon-todo.svg" alt="" aria-hidden="true">
                 <a class="nav-text" href="">Todo List</a>
               </li>
-              <li class="icon-text">
+              <li class="nav-item icon-text">
                 <img src="./images/icon-calendar.svg" alt="" aria-hidden="true">
                 <a class="nav-text" href="">Calendar</a>
               </li>
-              <li class="icon-text">
+              <li class="nav-item icon-text">
                 <img src="./images/icon-reminders.svg" alt="" aria-hidden="true">
                 <a class="nav-text" href="">Reminders</a>
               </li>
-              <li class="icon-text">
+              <li class="nav-item icon-text">
                 <img src="./images/icon-planning.svg" alt="" aria-hidden="true">
                 <a class="nav-text" href="">Planning</a>
               </li>
@@ -44,27 +46,49 @@
           <li class="nav-item" data-type="dropdown" aria-expanded="false">
             <button class="nav-text">Company</button>
             <ul>
-              <li><a class="nav-text" href="">History</a></li>
-              <li><a class="nav-text" href="">Our Team</a></li>
-              <li><a class="nav-text" href="">Blog</a></li>
+              <li class="nav-item"><a class="nav-text" href="">History</a></li>
+              <li class="nav-item"><a class="nav-text" href="">Our Team</a></li>
+              <li class="nav-item"><a class="nav-text" href="">Blog</a></li>
             </ul>
           </li>
-          <li><a class="nav-text" href="">Careers</a></li>
-          <li><a class="nav-text" href="">About</a></li>
+          <li class="nav-item"><a class="nav-text" href="">Careers</a></li>
+          <li class="nav-item"><a class="nav-text" href="">About</a></li>
         </ul>
         <ul class="primary-nav-actions | flex">
-          <li><a class="nav-text" href="">Login</a></li>
+          <li class="nav-item"><a class="nav-text" href="">Login</a></li>
           <li><a class="btn" data-type="small" href="">Register</a></li>
         </ul>
       </nav>
-      <!-- Dark mode switch to be placed here -->
+      <button class="theme-toggle" id="theme-toggle" title="Toggle light and dark" aria-label="auto" aria-live="polite">
+        <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+          <circle class="sun" cx="12" cy="12" r="6" fill="currentColor" mask="url(#moon-mask)" />
+          <g class="sun-beams" stroke="currentColor">
+            <circle cx="12" cy="2.5" r="1.5" fill="currentColor" />
+            <circle cx="3.77" cy="7.25" r="1.5" fill="currentColor" />
+            <circle cx="3.77" cy="16.75" r="1.5" fill="currentColor" />
+            <circle cx="12" cy="21.5" r="1.5" fill="currentColor" />
+            <circle cx="20.23" cy="16.75" r="1.5" fill="currentColor" />
+            <circle cx="20.23" cy="7.25" r="1.5" fill="currentColor" />
+          </g>
+          <mask class="moon" id="moon-mask">
+            <rect x="0" y="0" height="100%" width="100%" fill="white" />
+            <circle cx="24" cy="10" r="6" fill="black" />
+          </mask>
+        </svg>
+      </button>
       <button class="menu-button" id="primary-nav-button"><span class="sr-only">Menu</span></button>
     </header>
     <main class="content-wrapper">
-      <picture class="content-image">
-        <source media="(min-width: 50em)" srcset="./images/image-hero-desktop.png">
-        <img src="./images/image-hero-mobile.png" alt="" aria-hidden="true">
-      </picture>
+      <div class="hero-image-wrapper">
+        <picture class="hero-image theme-image" data-type="light">
+          <source media="(min-width: 50em)" srcset="./images/image-hero-desktop.png">
+          <img src="./images/image-hero-mobile.png" alt="" aria-hidden="true">
+        </picture>
+        <picture class="hero-image theme-image" data-type="dark">
+          <source media="(min-width: 50em)" srcset="./images/image-hero-desktop-dark.png">
+          <img src="./images/image-hero-mobile-dark.png" alt="" aria-hidden="true">
+        </picture>
+      </div>
       <section class="content-body">
         <h1>Make remote work</h1>
         <p>
