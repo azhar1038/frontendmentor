@@ -57,7 +57,7 @@ Solution in Mobile
 
 ### Continued development
 
-- [ ] Dark mode
+- [x] Dark mode
 
 ### Useful resources
 
