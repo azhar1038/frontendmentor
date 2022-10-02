@@ -1,0 +1,85 @@
+:root {
+  --clr-primary-red: hsl(7, 99%, 70%);
+  --clr-primary-yellow: hsl(51, 100%, 49%);
+  --clr-primary-blue: hsl(198, 62%, 26%);
+  --clr-primary-cyan-400: hsl(168, 34%, 41%);
+  --clr-primary-cyan-500: hsl(167, 40%, 24%);
+ 
+  --clr-neutral-blue-100: hsl(210, 4%, 67%);
+  --clr-neutral-blue-200: hsl(232, 10%, 55%);
+  --clr-neutral-blue-300: hsl(213, 9%, 39%);
+  --clr-neutral-blue-900: hsl(212, 27%, 19%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+
+  --ff-primary: 'Barlow', sans-serif;
+  --ff-secondary: 'Fraunces', serif;
+
+  --fw-regular: 600;
+  --fw-medium: 700;
+  --fw-bold: 900;
+
+  --fs-400: 1.125rem;
+  --fs-900: 4rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+
+  background-color: goldenrod;
+}
+
+.plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  height: 7rem;
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+}
+
+.primary-nav {
+  display: flex;
+}
+
+.logo {
+  height: 2.5rem;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container > div {
+  position: absolute;
+  top: 0;
+}
+
+.header-content {
+  width: 100%;
+  text-align: center;
+  margin-block-start: 7rem;
+}
+
+.header-content > h1 {
+  color: var(--clr-neutral-white);
+  font-size: var(--fs-900);
+  font-family: var(--ff-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.175em;
+  font-weight: var(--fw-bold);
+  padding-block: 1.5em;
+}
+
+.header-content > img {
+  display: inline-block;
+}
