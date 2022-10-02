@@ -10,26 +10,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <header class="primary-header">
     <img class="logo" src="./images/logo.svg" alt="Sunnyside logo">
-    <nav aria-label="Main">
+    <nav class="primary-nav-wrapper" id="primary-nav" aria-expanded="false" aria-label="Main">
       <ul class="primary-nav | plain-list">
         <li class="nav-item"><a href="">About</a></li>
         <li class="nav-item"><a href="">Services</a></li>
         <li class="nav-item"><a href="">Projects</a></li>
         <li class="nav-item"><a href="" class="btn">Contact</a></li>
       </ul>
-      <!-- <button><span class="sr-only">Menu</span></button> -->
+      <button><span class="sr-only">Menu</span></button>
     </nav>
   </header>
   <main>
     <section class="image-container">
       <picture>
         <source media="(min-width:50em)" srcset="./images/desktop/image-header.jpg">
-        <img src="./images/mobile/image-header.jpg" alt="">
+        <img class="section-image" src="./images/mobile/image-header.jpg" alt="">
       </picture>
       <div class="header-content">
         <h1>We are creatives</h1>
@@ -194,7 +194,7 @@
     </ul>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="https://github.com/azhar1038">Azhar</a>.
+      Coded by <a href="https://github.com/azhar1038" target="_blank">Azhar</a>.
     </div>
   </footer>
 </body>
