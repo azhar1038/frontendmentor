@@ -27,7 +27,13 @@
   --fs-800: 2.5rem;
   --fs-900: 4rem;
 
-  --header-height: 8rem;
+  --header-height: 6rem;
+}
+
+@media screen and (min-width:50em) {
+  :root {
+    --header-height: 8rem; 
+  }
 }
 
 body {
@@ -81,8 +87,6 @@ h3 {
   }
 }
 
-
-
 .primary-header {
   display: flex;
   align-items: center;
@@ -122,7 +126,7 @@ h3 {
     background-color: var(--clr-neutral-white);
     color: var(--clr-neutral-blue-200);
     position: absolute;
-    inset: 8rem 2.5rem auto 2.5rem;
+    inset: calc(var(--header-height) + 1rem) 2.5rem auto 2.5rem;
     flex-direction: column;
     gap: 2rem;
     padding-block: 2rem;
@@ -178,12 +182,13 @@ h3 {
 
 .header-content > h1 {
   color: var(--clr-neutral-white);
-  font-size: clamp(var(--fs-600), 8vw, var(--fs-900));
+  font-size: clamp(var(--fs-600), 6vw, var(--fs-900));
   font-family: var(--ff-secondary);
   text-transform: uppercase;
   letter-spacing: 0.175em;
   font-weight: var(--fw-bold);
   padding-block: 1em 1.5em;
+  padding-inline: 1em;
 }
 
 .header-content > img {
@@ -402,6 +407,10 @@ footer {
   height: 100%;
 }
 
+.footer-nav-wrapper {
+  width: min(80%, 20rem);
+}
+
 .footer-nav,
 .social-links {
   display: flex;
@@ -409,7 +418,8 @@ footer {
 
 .footer-nav {
   margin-block: 3em;
-  gap: 4rem;
+  gap: 1rem;
+  justify-content: space-between;
 }
 
 .footer-nav a {
