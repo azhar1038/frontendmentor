@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-nav-open="false">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | News homepage</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="primary-header">
+      <img class="header-logo" src="./assets/images/logo.svg" alt="Logo of W">
+      <nav class="primary-nav-wrapper" aria-label="site">
+        <ul class="primary-nav | plain-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Categories</a></li>
+        </ul>
+        <button id="primary-nav-button"><span class="sr-only">Menu</span></button>
+      </nav>
+    </header>
+    <section class="main-grid">
+      <picture>
+        <source media="(min-width: 40em)" srcset="./assets/images/image-web-3-desktop.jpg">
+        <img src="./assets/images/image-web-3-mobile.jpg" alt="Some blue orange blocks">
+      </picture>
+      <h1>The Bright Future of Web 3.0?</h1>
+      <div>
+        <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
+        <a href="#" class="btn-primary">Read more</a>
+      </div>
+      <aside class="new-stories">
+        <h2 aria-hidden="true">New</h2>
+        <ul class="plain-list" aria-label="new stories">
+          <li>
+            <h3><a href="#">Hydrogen VS Electric Cars</a></h3>
+            <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+          </li>
+          <li>
+            <h3><a href="#">The Downsides of AI Artistry</a></h3>
+            <p>What are the possible adverse effects of on-demand AI image generation?</p>
+          </li>
+          <li>
+            <h3><a href="#">Is VC Funding Drying Up?</a></h3>
+            <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+          </li>
+        </ul>
+      </aside>
+    </section>
+    <nav class="bottom-nav">
+      <ol class="bottom-nav-list | plain-list" aria-label="popular articles">
+        <li class="bottom-nav-item">
+          <img src="./assets/images/image-retro-pcs.jpg" alt="Old computer and peripherals">
+          <span class="list-index" aria-hidden="true">01</span>
+          <h4><a href="#">Reviving Retro PCs</a></h4>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </li>
+        <li class="bottom-nav-item">
+          <img src="./assets/images/image-top-laptops.jpg" alt="Black keyboard with red text">
+          <span class="list-index" aria-hidden="true">02</span>
+          <h4><a href="#">Top 10 Laptops of 2022</a></h4>
+          <p>Our best picks for various needs and budgets.</p>
+        </li>
+        <li class="bottom-nav-item">
+          <img src="./assets/images/image-gaming-growth.jpg" alt="Game controller">
+          <span class="list-index" aria-hidden="true">03</span>
+          <h4><a href="#">The Growth of Gaming</a></h4>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/azhar1038" target="_blank">Azhar</a>.
+  </div>
+</body>
+</html>
