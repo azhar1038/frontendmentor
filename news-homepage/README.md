@@ -24,10 +24,10 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
-Desktop design
+Desktop design  
 ![Desktop design](./design/solution-web.jpeg)
 
-Mobile Design
+Mobile Design  
 ![Mobile Design](./design/solution-mobile.jpeg)
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
