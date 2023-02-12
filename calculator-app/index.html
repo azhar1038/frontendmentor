@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="1">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="calculator.js" defer></script>
+  <!-- Load and run theme script first to avoid screen flickering, so no defer -->
+  <script src="theme.js"></script> 
+</head>
+
+<body>
+  <div class="wrapper">
+    <main class="container">
+      <h1 class="sr-only">Calculator</h1>
+      <div class="setting">
+        <span class="lh-1" aria-hidden="true">calc</span>
+        <div class="theme-toggle-wrapper">
+          <span aria-hidden="true">theme</span>
+          <button class="theme-toggle" id="theme-toggle-button" title="Toggle theme" aria-label="auto" aria-live="polite">
+            <div class="theme-labels" aria-hidden="true">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="theme-switch" aria-hidden="true">
+              <div class="handle"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="screen | border-radius-400">
+        <div id="prev-num" aria-hidden="true"></div>
+        <div id="operator" class="fs-700 lh-1" aria-label="operator"></div>
+        <div id="curr-num" class="fs-700 lh-1" aria-label="current number">0</div>
+      </div>
+      <div class="keys-holder | border-radius-400">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button data-key-type="2">DEL</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>+</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+        <button>.</button>
+        <button>0</button>
+        <button>/</button>
+        <button>x</button>
+        <button data-key-size="large" data-key-type="2">RESET</button>
+        <button data-key-size="large" data-key-type="3">=</button>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/azhar1038">Azhar</a>.
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>
