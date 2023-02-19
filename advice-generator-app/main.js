@@ -4,13 +4,13 @@ $advice = $adviceCard.querySelector('.advice');
 $loaderButton = $adviceCard.querySelector('.generate-advice');
 
 function startLoader() {
-  $adviceCard.dataset.state = 'loading';
+  $adviceCard.dataset.loading = 'true';
   $loaderButton.disabled = true;
 }
 
 function stopLoader() {
   $loaderButton.addEventListener('animationiteration', (e) => {
-    $adviceCard.dataset.state = 'loaded';
+    $adviceCard.dataset.loading = 'false';
     $loaderButton.disabled = false;
   }, {
     once: true
