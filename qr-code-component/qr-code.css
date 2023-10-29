@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+:root {
+  --bg: hsl(212 45% 89%);
+  --card-bg: hsl(0 0% 100%);
+  --text1: hsl(220 15% 55%);
+  --text2: hsl(218 44% 22%);
+
+  --ff-outfit: 'Outfit', sans-serif;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: var(--ff-outfit);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.qr-card {
+  background-color: var(--card-bg);
+  width: 20rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.qr-card picture {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.qr-card img {
+  width: 100%;
+}
+
+.qr-card .content {
+  padding: 2rem 0.5rem;
+}
+
+.qr-card h1 {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: var(--text2);
+  padding-block-end: 0.5em;
+}
+
+.qr-card p {
+  color: var(--text1);
+}
+
+/* Bottom attribution styling */
+.attribution {
+  padding-block-start: 2rem;
+  font-size: 0.7rem;
+}
+
+.attribution a:focus-visible {
+  outline: 2px solid var(--text2);
+}

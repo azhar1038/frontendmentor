@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+/* Custom properties and theme handling */
+
+:root {
+  color-scheme: light;
+
+  --bg-light: hsl(30 38% 92%);
+  --bg-secondary-light: hsl(0 0% 100%);
+  --text1-light: hsl(228 12% 48%);
+  --text2-light: hsl(212 21% 14%);
+  --clr-accent-light-500: hsl(158 36% 37%); 
+  --clr-accent-light-900: hsl(158 36% 20%);
+
+  --bg-dark: hsl(30 10% 10%);
+  --bg-secondary-dark: hsl(0 5% 20%);
+  --text2-dark: hsl(212 38% 70%);
+  --text1-dark: hsl(228 12% 80%);
+  --clr-accent-dark-500: hsl(158 30% 44%); 
+  --clr-accent-dark-900: hsl(158 30% 30%);
+
+  --bg: var(--bg-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+  --clr-accent-500: var(--clr-accent-light-500);
+  --clr-accent-900: var(--clr-accent-light-900);
+
+  --ff1: 'Montserrat', sans-serif;
+  --ff2: 'Fraunces', serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: var(--bg-dark);
+    --bg-secondary: var(--bg-secondary-dark);
+    --text1: var(--text1-dark);
+    --text2: var(--text2-dark);
+    --clr-accent-500: var(--clr-accent-dark-500);
+    --clr-accent-900: var(--clr-accent-dark-900);
+  }
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: var(--bg-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+  --clr-accent-500: var(--clr-accent-light-500);
+  --clr-accent-900: var(--clr-accent-light-900);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: var(--bg-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --text1: var(--text1-dark);
+  --text2: var(--text2-dark);
+  --clr-accent-500: var(--clr-accent-dark-500);
+  --clr-accent-900: var(--clr-accent-dark-900);
+}
+
+/* Normalize some stuff */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+p {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+}
+
+/* General setup styling */
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: var(--ff1);
+}
+
+.container {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+:where(button) {
+  outline-offset: 5px;
+}
+
+:where(button):focus-visible {
+  outline: 2px dashed var(--text1);
+}
+
+/* Component styling mobile view*/
+
+.card {
+  background-color: var(--bg-secondary);
+  max-width: 25rem;
+  min-width: 17rem;
+  color: var(--text1);
+  display: grid;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+}
+
+.product {
+  padding: 1.75rem;
+}
+
+.product-category {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.product .product-name {
+  font-family: var(--ff2);
+  font-size: 2rem;
+  line-height: 1.1;
+  padding-block: 0.5em;
+  color: var(--text2);
+}
+
+.product .product-info {
+  line-height: 1.5;
+}
+
+.product-price {
+  padding-block: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.new-price {
+  color: var(--clr-accent-500);
+  font-family: var(--ff2);
+  font-size: 2rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+}
+
+.btn {
+  --_btn-bg: var(--clr-accent-500);
+  --_btn-text: hsl(0 0% 100%);
+
+  background-color: var(--_btn-bg);
+  color: var(--_btn-text);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  gap: 1rem;
+  border: 0;
+  padding-block: 1em;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background-color 120ms ease-out;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--clr-accent-900);
+}
+
+.btn img {
+  max-height: 1.1rem;
+  max-width: 1.1rem;
+}
+
+/* Styling for bigger screen */
+
+@media (min-width: 40em) {
+  .card {
+    max-width: 40rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+/* Bottom link styling */
+
+.attribution {
+  padding-block-start: 2rem;
+  font-size: 0.7rem;
+}
+
+.attribution a:focus-visible {
+  outline: 2px solid var(--text1);
+}

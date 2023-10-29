@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --bg: hsl(217, 54%, 11%);
+  --text1: hsl(215, 51%, 70%);
+  --text2: hsl(0 0% 100%);
+
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+
+  --text-highlight: hsl(178, 100%, 50%);
+  --image-cover: hsl(178 100% 50%/0.5);
+
+  --ff-outfit: 'Outfit', sans-serif;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: var(--ff-outfit);
+  color: var(--text1);
+  font-weight: 300;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.glow {
+  color: var(--text-highlight);
+  font-weight: 400;
+}
+
+.hover-glow {
+  color: var(--text2);
+  transition: color 200ms ease-in;
+}
+
+.hover-glow:hover {
+  color: var(--text-highlight);
+}
+
+.icon-text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+}
+
+.nft-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 20rem;
+  box-shadow: 0px 11px 18px 10px rgba(0,0,0,0.1);
+}
+
+.nft-card > picture {
+  position: relative;
+}
+
+.nft-card > picture::after {
+  content: url("images/icon-view.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--image-cover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+.nft-card > picture:hover::after {
+  opacity: 1;
+}
+
+.nft-card > picture > img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.nft-card .offer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nft-card .separator {
+  background-color: var(--line);
+  border: none;
+  height: 1px;
+}
+
+.nft-card .creator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nft-card .creator > img {
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--text2);
+}
+
+/* Bottom attribution styling */
+.attribution {
+  padding-block-start: 2rem;
+  font-size: 0.7rem;
+}
+
+.attribution a {
+  color: var(--text-highlight);
+}
+
+.attribution a:focus-visible {
+  outline: 2px solid var(--text2);
+}

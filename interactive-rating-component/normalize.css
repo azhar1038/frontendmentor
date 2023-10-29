@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+p {
+  margin: 0;
+}
+
+picture,
+image {
+  display: block;
+  max-width: 100%;
+}
+
+ul[role="list"] {
+  list-style: none;
+}

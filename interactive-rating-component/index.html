@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Rating Component</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="interactice-rating.css">
+    <script src="interactiveRating.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="feedback-card" data-submitted="false">
+          <div class="feedback-input-wrapper">
+            <picture class="star-image" aria-hidden="true">
+              <img src="./images/icon-star.svg" alt="Orange Star">
+            </picture>
+            <section class="content">
+              <h1>How did we do?</h1>
+              <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+            </section>
+            <form class="rating-form" id="rating-form" method="post">
+              <ul class="rating-radio-group" role="list" aria-label="Feedback rating from 1 to 5">
+                <li>
+                  <input type="radio" name="rating" id="rating-1" value="1">
+                  <label for="rating-1">1</label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" id="rating-2" value="2">
+                  <label for="rating-2">2</label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" id="rating-3" value="3">
+                  <label for="rating-3">3</label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" id="rating-4" value="4">
+                  <label for="rating-4">4</label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" id="rating-5" value="5">
+                  <label for="rating-5">5</label>
+                </li>
+              </ul>
+              <button>Submit</button>
+            </form>
+          </div>
+
+          <div class="feedback-result-wrapper">
+            <img src="./images/illustration-thank-you.svg" alt="Feedback received" aria-hidden="true">
+            <div class="rating-result">You selected <span></span> out of 5</div>
+            <section class="content">
+              <h1>Thank you!</h1>
+              <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+            </section>
+          </div>
+        </div>
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+          Coded by <a href="https://github.com/azhar1038">Azhar</a>.
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
