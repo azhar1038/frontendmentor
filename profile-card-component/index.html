@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Mentor | Profile Card Component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="profile-card.css">
+  <link rel="stylesheet" href="theme-toggle.css">
+  <script src="theme-toggle.js" defer></script>
+  <style>
+    .attribution {
+      font-size: 0.7rem;
+      color: hsl(0 0% 90%);
+    }
+
+    .attribution a:focus-visible {
+      outline: 2px solid hsl(0 0% 90%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="card">
+        <img src="images/bg-pattern-card.svg" alt="" aria-hidden="true">
+        <div class="profile">
+          <div class="profile__photo">
+            <img src="images/image-victor.jpg" alt="" aria-hidden="true">
+          </div>
+          <div class="profile__desc">
+            <h1>Victor Crest <span data-style="light">26</span></h1>
+            <p>London</p>
+          </div>
+        </div>
+        <hr>
+        <ul class="stats" role="list">
+          <li>
+            <h2>80K</h2>
+            <p>Followers</p>
+          </li>
+          <li>
+            <h2>803K</h2>
+            <p>Likes</p>
+          </li>
+          <li>
+            <h2>1.4K</h2>
+            <p>Photos</p>
+          </li>
+        </ul>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" title="Toggles light & dark theme" aria-label="auto"
+        aria-live="polite"></button>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/azhar1038">Azhar</a>.
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

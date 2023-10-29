@@ -1,0 +1,33 @@
+/* The switch - the box around the slider */
+.theme-toggle {
+  position: relative;
+  width: 55px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: hsl(0 0% 12%);
+  transition: background-color 300ms ease-in-out;
+}
+
+.theme-toggle::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: hsl(0 0% 90%);
+  transition: transform 300ms ease-in-out,
+    background-color 300ms ease-in-out;
+}
+
+
+[data-theme="dark"] .theme-toggle {
+  background-color: hsl(0 0% 80%);
+}
+
+[data-theme="dark"] .theme-toggle::before {
+  background-color: hsl(0 0% 12%);
+  transform: translateX(26px);
+}

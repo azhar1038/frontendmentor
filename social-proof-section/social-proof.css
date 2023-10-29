@@ -1,0 +1,220 @@
+:root {
+  --clr-primary-700: hsl(300, 43%, 22%);
+  --clr-primary-300: hsl(333, 80%, 67%);
+
+  --clr-neutral-500: hsl(303, 10%, 53%);
+  --clr-neutral-300: hsl(300, 30%, 93%);
+  --clr-neutral-200: hsl(300, 24%, 96%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --ff-primary: 'League Spartan', sans-serif;
+
+  /* --fs-400: 0.9375rem;
+  --fs-700: 2rem;
+  --fs-900: 3rem; */
+
+  --fs-400: 1rem;
+  --fs-700: 2.5rem;
+  --fs-900: 3.5rem;
+
+  --fw-bold: 700;
+  --fw-medium: 500;
+  --fw-regular: 400;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+
+  background-position: top left, bottom right;
+  background-image: url(images/bg-pattern-top-desktop.svg),
+    url(images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 50em) {
+  body {
+    background-image: url(images/bg-pattern-top-mobile.svg),
+      url(images/bg-pattern-bottom-mobile.svg);
+    text-align: center;
+  }
+}
+
+.container {
+  width: min(100% - 3rem, 60rem);
+  margin-inline: auto;
+  padding-block: 5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 50em) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.lead h1 {
+  color: var(--clr-primary-700);
+  font-size: var(--fs-900);
+  line-height: 1;
+  max-width: 15ch;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    var(--clr-primary-700),
+    var(--clr-primary-300),
+    var(--clr-primary-700)
+  );
+  background-size: 200% auto;
+  background-clip: text; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.lead p {
+  color: var(--clr-neutral-500);
+  line-height: 1.2;
+  margin-block-start: 1em;
+  max-width: 40ch;
+  font-weight: var(--fw-medium);
+}
+
+@media (max-width: 50em) {
+  .lead h1 {
+    margin-inline: auto;
+    font-size: var(--fs-700);
+  }
+
+  .lead p {
+    margin-inline: auto;
+  }
+}
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+}
+
+.ratings li {
+  background-color: var(--clr-neutral-200);
+  border-radius: 0.5rem;
+  padding-block: 0.5em;
+  width: min(100%, 30rem);
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary-700);
+  transition: transform 200ms ease-out,
+    background-color 200ms ease-in-out;
+}
+
+.ratings li:hover {
+  background-color: var(--clr-neutral-300);
+}
+
+.ratings .stars img {
+  display: inline-block;
+  height: 0.75rem;
+  width: 1rem;
+  object-fit: contain;
+}
+
+@media (min-width: 50em) { 
+  .ratings li {
+    display: flex;
+    width: 24rem;
+    padding: 0.75em;
+  }
+
+  .ratings .stars {
+    width: 8rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 60em) {
+  .ratings li:first-child {
+    transform: translateX(-2rem);
+  }
+  .ratings li:last-child {
+    transform: translateX(2rem);
+  }
+}
+
+.reviews {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.reviews li {
+  width: min(100%, 30rem);
+}
+
+@media (min-width: 50em) {
+  .reviews {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: initial;
+  }
+
+  .reviews li:nth-child(2) {
+    transform: translateY(1rem);
+  }
+
+  .reviews li:nth-child(3) {
+    transform: translateY(2rem);
+  }
+}
+
+.reviews blockquote {
+  background-color: var(--clr-primary-700);
+  color: var(--clr-neutral-100);
+  border-radius: 0.5rem;
+  padding: 1.5em;
+  text-align: start;
+  line-height: 1.2;
+  height: 100%;
+  transition: transform 200ms ease-in-out,
+    box-shadow 200ms ease-in-out;
+}
+
+.reviews blockquote:hover {
+  transform: scale(1.02);
+  box-shadow: 2px 2px 8px hsl(0 0% 0% / 0.4);
+}
+
+.reviews .author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block-end: 1em;
+}
+
+.reviews .author img {
+  border-radius: 50%;
+  width: 2rem;
+}
+
+.reviews .author .author-name {
+  font-weight: var(--fw-bold);
+}
+
+.reviews .author .author-status {
+  color: var(--clr-primary-300);
+}

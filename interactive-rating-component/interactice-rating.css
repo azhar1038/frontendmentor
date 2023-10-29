@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+
+  --lighten-dark-blue: hsl(213, 19%, 24%);
+  --darken-dark-blue: hsl(213, 19%, 12%);
+
+  --ff-overpass: 'Overpass', sans-serif;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--ff-overpass);
+  background-color: var(--very-dark-blue);
+  color: var(--light-grey);
+}
+
+/* General styling */
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content h1 {
+  padding-block: 0.5em;
+  color: var(--white);
+}
+
+/* Main card */
+
+.feedback-card {
+  height: 25rem;
+  width: 25rem;
+  border-radius: 2rem;
+  padding: 2rem;
+  background-image: radial-gradient(
+    circle at top center,
+    var(--dark-blue),
+    var(--darken-dark-blue)
+  );
+}
+
+/* Wrapper for both views */
+
+.feedback-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.feedback-result-wrapper {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Handle which view to show */
+
+.feedback-card[data-submitted="true"] .feedback-result-wrapper {
+  display: flex;
+  visibility: visible;
+}
+
+.feedback-card[data-submitted="true"] .feedback-input-wrapper {
+  display: none;
+  visibility: hidden;
+}
+
+/* Form view styling */
+  /* Star image at top */
+.star-image {
+  height: 3rem;
+  width: 3rem;
+  object-fit:none;
+  border-radius: 50%;
+  background-color: var(--lighten-dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  /* Radio group styling */
+.rating-radio-group {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0;
+  padding-block-end: 1rem;
+}
+
+.rating-radio-group li {
+  position: relative;
+}
+
+.rating-radio-group li > input[type="radio"] {
+  position: absolute;
+  appearance: none;
+}
+
+.rating-radio-group label {
+  display: inline-flex;
+  height: 3rem;
+  width: 3rem;
+  line-height: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 200ms ease-in-out,
+    color 200ms ease-in-out;
+}
+
+  /* Radio button style on different state */
+.rating-radio-group input[type="radio"]:not(:checked) + label {
+  background-color: var(--lighten-dark-blue);
+}
+
+.rating-radio-group input[type="radio"]:not(:checked):hover + label {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.rating-radio-group input[type="radio"]:checked + label {
+  background-color: var(--medium-grey);
+  color: var(--white);
+}
+
+.rating-radio-group input[type="radio"]:focus-visible + label{
+  outline: 2px solid var(--white);
+  outline-offset: 5px;;
+}
+
+  /* Submit button */
+.rating-form button {
+  width: 100%;
+  background-color: var(--orange);
+  color: var(--white);
+  padding-block: 1em;
+  border: none;
+  border-radius: 10rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  cursor: pointer;
+  outline-offset: 5px;
+  transition: background-color 150ms ease-in-out,
+    color 150ms ease-in-out;
+}
+
+.rating-form button:hover,
+.rating-form button:focus-visible {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+/* Rating submitted view styling */
+.feedback-result-wrapper img {
+  height: 8rem;
+  padding-block: 1rem;
+  object-fit: contain;
+}
+
+.rating-result {
+  background-color: var(--lighten-dark-blue);
+  padding: 0.3em 1em;
+  border-radius: 5em;
+  color: var(--orange);
+}
+
+.feedback-result-wrapper .content {
+  text-align: center;
+}
+
+
+/* Bottom attribution styling */
+.attribution {
+  padding-block-start: 2rem;
+  font-size: 0.7rem;
+}
+
+.attribution a:focus-visible {
+  outline: 2px solid var(--white);
+}

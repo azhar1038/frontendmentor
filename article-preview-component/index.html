@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Mentor | Article preview component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="article-preview.css">
+  <link rel="stylesheet" href="theme-toggle.css">
+  <script src="theme-toggle.js" defer></script>
+  <script src="article-preview.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="card">
+        <img class="article-picture" src="images/drawers.jpg" alt="A flower vase on a green drawer">
+        <section class="content">
+          <h1>
+            Shift the overall look and feel by adding these wonderful touches to furniture in your home
+          </h1>
+          <p>
+            Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve
+            got some simple tips to help you make any room feel complete.
+          </p>
+        </section>
+
+        <!-- The bottom part, where all the action happens!! -->
+        <div class="article-info" data-share="false">
+          <div class="author">
+            <img class="author__avatar" src="images/avatar-michelle.jpg" alt="" aria-hidden="true">
+            <div>
+              <h2 class="author__name">Michelle Appleton</h2>
+              <p class="author__article-date">28 Jun 2020</p>
+            </div>
+          </div>
+
+          <!-- Button is placed before links so that after pressing the button, focus can go to links -->
+          <button class="article-share" title="Toggles share menu" aria-label="Open share menu">
+            <svg width="15" height="13" aria-hidden="true">
+              <path fill="currentColor"
+                d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" />
+            </svg>
+          </button>
+
+          <div class="social-links">
+            <p aria-hidden="true">share</p>
+            <ul role="list" aria-label="Social media links">
+              <li>
+                <a href="#" aria-label="Facebook">
+                  <img src="images/icon-facebook.svg" alt="facebook" aria-hidden="true">
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-label="Twitter">
+                  <img src="images/icon-twitter.svg" alt="twitter" aria-hidden="true">
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-label="Pinterest">
+                  <img src="images/icon-pinterest.svg" alt="pinterest" aria-hidden="true">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle" title="Toggles light & dark theme" aria-label="auto"
+        aria-live="polite"></button>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/azhar1038">Azhar</a>.
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
